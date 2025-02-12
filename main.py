@@ -53,7 +53,9 @@ def add_pre_reservation(token: str, num_socio: str, id_funcionarios_atividades_g
 
     # Get current date and hour in the required format
     now = datetime.now()
-    data_atividade = now.strftime("%Y-%m-%d")
+    tomorrow = now + timedelta(days=1)  # Get tomorrow's date
+
+    data_atividade = tomorrow.strftime("%Y-%m-%d")  # Tomorrow's date
     client_date_time = now.strftime("%Y-%m-%d %H")
 
     payload = {
