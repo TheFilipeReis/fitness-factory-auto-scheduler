@@ -2,7 +2,8 @@ name: run main.py
 
 on:
   schedule:
-    - cron: '50 22 * * 3' #'30 6 * * 1,2' # At 06:30 every monday and tuesday
+    - cron: '00 23 * * 3' #'30 6 * * 1,2' # At 06:30 every monday and tuesday
+  workflow_dispatch:
 
 jobs:
   build:
@@ -24,7 +25,9 @@ jobs:
           
       - name: execute py script # run main.py
         env:
-          SOME_SECRET: ${{ secrets.SOME_SECRET }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          LESSONS: ${{ secrets.LESSONS }}
         run: python main.py
           
       - name: commit files
