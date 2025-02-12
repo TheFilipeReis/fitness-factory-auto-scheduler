@@ -2,7 +2,7 @@ name: run main.py
 
 on:
   schedule:
-    - cron: "*40 23 * * 3" #"*30 6 * * 1,2" # At 06:30 every monday and tuesday
+    - cron: "40 23 * * 3" #"*30 6 * * 1,2" # At 06:30 every monday and tuesday
   workflow_dispatch:
 
 jobs:
